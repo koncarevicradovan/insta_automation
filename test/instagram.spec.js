@@ -1,82 +1,5 @@
 var expect = require('chai').expect;
 
-var months = [
-    {
-        name: 'Jan',
-        days: 31
-    },
-    {
-        name: 'Feb',
-        days: 28
-    },
-    {
-        name: 'Mar',
-        days: 31
-    },
-    {
-        name: 'Apr',
-        days: 30
-    },
-    {
-        name: 'May',
-        days: 31
-    },
-    {
-        name: 'Jun',
-        days: 30
-    },
-    {
-        name: 'Jul',
-        days: 31
-    },
-    {
-        name: 'Avg',
-        days: 31
-    },
-    {
-        name: 'Sep',
-        days: 30
-    },
-    {
-        name: 'Oct',
-        days: 31
-    },
-    {
-        name: 'Nov',
-        days: 30
-    },
-    {
-        name: 'Dec',
-        days: 31
-    }
-];
-
-function getIncrementedDate(currentDate) {
-    var d = Number(currentDate.split('-')[0]);
-    var m = currentDate.split('-')[1];
-    var y = Number(currentDate.split('-')[2]);
-
-    var month, monthIndex;
-    months.forEach(function (obj, index) {
-        if (obj.name === m) {
-            month = obj;
-            monthIndex = index + 1;
-            return;
-        }
-    });
-
-    if (month.name === 'Dec' && d == month.days) {
-        y += 1;
-        return '1-1-' + y;
-    }
-    if (d === month.days) {
-        monthIndex += 1;
-        return '1-' + monthIndex + '-2017';
-    }
-    d += 1;
-    return d + '-' + monthIndex + '-' + y;
-}
-
 beforeEach(function () {
     browser.url('/');
 });
@@ -97,7 +20,13 @@ describe('Calendar page', function () {
         expect(browser.element('//*[@id="react-root"]/section/main/article/div[2]/div[1]/div/form/div[2]/input').getValue()).to.be.empty;
         browser.setValue('//*[@id="react-root"]/section/main/article/div[2]/div[1]/div/form/div[2]/input', 'Partizanesku42');
         browser.element('//*[@id="react-root"]/section/main/article/div[2]/div[1]/div/form/span/button').click();
-        browser.waitForVisible('//*[@id="react-root"]/section/nav/div[2]/div/div/div[2]/div/div/span[2]');       
+        // browser.waitForVisible('//*[@id="react-root"]/section/nav/div[2]/div/div/div[2]/div/div/span[2]');       
+        browser.waitForVisible('//*[@id="react-root"]/section/nav/div[2]/div/div/div[3]/div/div[3]/a');
+        browser.element('//*[@id="react-root"]/section/nav/div[2]/div/div/div[3]/div/div[3]/a').click();
+        browser.waitForVisible('//*[@id="react-root"]/section/main/article/header/div[2]/ul/li[3]/a/span');
+        browser.element('//*[@id="react-root"]/section/main/article/header/div[2]/ul/li[3]/a/span').click();
+        browser.waitForVisible('/html/body/div[3]/div/div[2]/div/div[2]/div/div[2]/ul/li[1]/div/div[1]/div/div[1]/a');
+        
     });
 
     // it('should have a title', function() {
