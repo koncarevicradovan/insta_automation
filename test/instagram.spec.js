@@ -27,6 +27,16 @@ describe('Calendar page', function () {
         browser.element('//*[@id="react-root"]/section/main/article/header/div[2]/ul/li[3]/a/span').click();
         browser.waitForVisible('/html/body/div[3]/div/div[2]/div/div[2]/div/div[2]/ul/li[1]/div/div[1]/div/div[1]/a');
         
+        // var a = browser.element('/html/body/div[3]/div/div[2]/div/div[2]/div/div[2]/ul/li[1]/div/div[1]/div/div[1]/a').getText();
+        // alert(a);
+
+        // browser.element('/html/body/div[3]/div/div[2]/div/div[2]/div/div[2]/ul/li[103]/div/div[1]/div/div[1]/a').scroll();
+        // browser.waitForVisible('/html/body/div[3]/div/div[2]/div/div[2]/div/div[2]/ul/li[103]/div/div[1]/div/div[1]/a');
+        // browser.element('/html/body/div[3]/div/div[2]/div/div[2]/div/div[2]').scroll('/html/body/div[3]/div/div[2]/div/div[2]/div/div[2]/ul/li[30]/div/div[1]/div/div[1]/a');
+        browser.scroll(0, 250);
+        browser.element('/html/body/div[3]/div/div[2]/div/div[2]/div/div[2]/ul/li[30]/div/div[1]/div/div[1]/a').scroll();
+        //browser.waitForVisible('/html/body/div[3]/div/div[2]/div/div[2]/div/div[2]/ul/li[10]/div/div[1]/div/div[1]/a');
+        browser.waitForVisible('/html/body/div[3]/div/div[2]/div/div[2]/div/div[2]/ul/li[100]/div/div[1]/div/div[1]/a', 5000);
     });
 
     // it('should have a title', function() {
