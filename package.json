@@ -1,0 +1,21 @@
+{
+  "name": "calculator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "wdio"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webdriverio": "4.6.2"
+  },
+  "dependencies": {
+    "chai": "3.5.0",
+    "wdio-dot-reporter": "0.0.8",
+    "wdio-mocha-framework": "0.5.9",
+    "wdio-selenium-standalone-service": "0.0.8"
+  }
+}
