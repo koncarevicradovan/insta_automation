@@ -44,7 +44,7 @@ exports.config = {
         // 5 instances get started at a time.
         maxInstances: 5,
         //
-        browserName: 'firefox'
+        browserName: 'chrome'
     }],
     //
     // ===================
@@ -75,7 +75,7 @@ exports.config = {
     baseUrl: 'https://www.instagram.com',
     //
     // Default timeout for all waitFor* commands.
-    waitforTimeout: 10000,
+    waitforTimeout: 99999999,
     //
     // Default timeout in milliseconds for request
     // if Selenium Grid doesn't send response
@@ -125,7 +125,8 @@ exports.config = {
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
     mochaOpts: {
-        ui: 'bdd'
+        ui: 'bdd',
+        timeout: 9999999
     },
     //
     // =====
